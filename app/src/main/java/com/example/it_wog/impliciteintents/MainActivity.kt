@@ -12,12 +12,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Eine Telefonnummer anwählen
         callBtn.setOnClickListener {
             val telNr = Uri.parse("tel:0177893787899")
             //impliziter Intent Aufruf
             val callIntent = Intent(Intent.ACTION_DIAL, telNr)
             //starting the Intent
             startActivity(callIntent)
+        }
+        //Eine Webseite aufrufen
+        webBtn.setOnClickListener {
+            val webUrl = Uri.parse("http://www.zeit.de")
+            val webIntent = Intent(Intent.ACTION_VIEW, webUrl)
+            startActivity(webIntent)
+
         }
 
     }
